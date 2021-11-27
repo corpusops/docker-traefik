@@ -65,7 +65,7 @@ jobs:
       fail-fast: false
       matrix:
         IMAGES:
-        - "library/traefik/alpine library/traefik/1.7 library/traefik/1.7-alpine library/traefik/2.0 library/traefik/2.0-alpine library/traefik/v2.0 library/traefik/v2.2 library/traefik/v2.4 library/traefik/2.4"
+        - "library/traefik/alpine library/traefik/1.7-alpine library/traefik/2.0 library/traefik/2.0-alpine library/traefik/v2.0 library/traefik/v2.2 library/traefik/v2.4 library/traefik/2.4"
         #- "corpusops/test/a corpusops/test/b corpusops/test/c"
         # all images that werent explicitly told to be built would be built in the next batches
         # we span them onto N jobs

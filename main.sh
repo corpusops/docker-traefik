@@ -254,6 +254,7 @@ SKIPPED_TAGS="$SKIP_TF|$SKIP_MINOR_OS|$SKIP_NODE|$SKIP_DOCKER|$SKIP_MINIO|$SKIP_
 CURRENT_TS=$(date +%s)
 IMAGES_SKIP_NS="((mailhog|postgis|pgrouting(-bare)?|^library|dejavu|(minio/(minio|mc))))"
 
+SKIPPED_TAGS="$SKIPPED_TAGS|v?1\.[0-9]$"
 
 default_images="
 library/traefik
@@ -280,7 +281,6 @@ MAILU_VERSiON=1.7
 
 BATCHED_IMAGES="\
 library/traefik/alpine\
- library/traefik/1.7\
  library/traefik/1.7-alpine\
  library/traefik/2.0\
  library/traefik/2.0-alpine\
@@ -579,7 +579,9 @@ do_refresh_images() {
     while read images;do
         for image in $images;do
             if [[ -n $image ]];then
-                make_tags $image
+                if [[ -z "${SKIP_MAKE_TAGS-}" ]];then
+                    make_tags $image
+                fi
                 do_clean_tags $image
             fi
         done
