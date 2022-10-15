@@ -12,9 +12,17 @@
 2.3
 2.4
 2.5
+2.6
+2.7
+2.8
+2.9
 alpine
+banon
+beaufort
 brie
+epoisses
 latest
+rocamadour
 v1.1-alpine
 v1.2-alpine
 v1.3-alpine
@@ -29,3 +37,8 @@ v2.2
 v2.3
 v2.4
 v2.5
+v2.6
+v2.7
+v2.8
+v2.9
+vacherin
