@@ -1,6 +1,6 @@
-ARG ANCESTOR=library/traefik:alpine
+ARG ANCESTOR=library/traefik:v2
 ARG RSYNC=corpusops/rsync
-FROM library/traefik:alpine AS final
+FROM library/traefik:v2 AS final
 ARG DO_UPDATE=y
 ARG NONINTERACTIVE=y
 ARG DEBIAN_FRONTEND=noninteractive
